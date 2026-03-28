@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Jeremy Tammik — Developer Advocate, Mathematician, Author</title>
+  <meta name="description" content="Meet Jeremy Tammik: M.Sc. Mathematics from Philipps-Universität Marburg, Autodesk since 1988, author, speaker, and technology evangelist for AEC developers worldwide.">
+  <link rel="canonical" href="https://jeremytammik.com/about">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Jeremy Tammik — Developer Advocate, Mathematician, Author">
+  <meta property="og:description" content="M.Sc. Mathematics from Philipps-Universität Marburg. At Autodesk since 1988. Author, speaker, AEC technology evangelist. Fluent in six European languages.">
+  <meta property="og:url" content="https://jeremytammik.com/about">
+  <meta property="og:site_name" content="Jeremy Tammik">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About Jeremy Tammik">
+  <meta name="twitter:description" content="M.Sc. Mathematics. Autodesk since 1988. Author of The Building Coder. Six languages.">
+  <meta name="twitter:site" content="@jeremytammik">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-1: #0f0f0f;
+      --bg-2: #141414;
+      --text: #dad6ce;
+      --text-muted: #5c5855;
+      --text-dim: #8c8680;
+      --accent: #c9a96e;
+      --accent-dim: rgba(201,169,110,0.12);
+      --border: #1a1a1a;
+      --border-mid: #242424;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+      --max-w: 1080px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 3px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    .nav-links a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 2rem 3.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .page-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .page-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── CONTENT LAYOUT ── */
+    .content-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 5rem;
+      align-items: start;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    /* ── BIO ── */
+    .bio-section { }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bio-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-dim);
+    }
+
+    .bio-text p + p { margin-top: 1.25em; }
+
+    .bio-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .bio-text a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,169,110,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .bio-text a:hover { border-color: var(--accent); }
+
+    /* ── SIDEBAR ── */
+    .about-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Photo placeholder */
+    .photo-placeholder {
+      aspect-ratio: 3/4;
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(201,169,110,0.025) 20px,
+          rgba(201,169,110,0.025) 21px
+        );
+    }
+
+    .photo-initials {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--border-mid);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-caption {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Facts card */
+    .facts-card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .facts-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .facts-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .facts-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.83rem;
+      color: var(--text-dim);
+    }
+
+    .facts-list li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-section {
+      margin-top: 3.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      transform: translateX(-3px);
+    }
+
+    .timeline-item.highlight .timeline-dot {
+      background: var(--accent);
+    }
+
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-event {
+      font-family: var(--font-ui);
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-detail {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    /* ── INTERESTS ── */
+    .interests-section {
+      margin-top: 3.5rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--border-mid);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-sidebar { flex-direction: row; flex-wrap: wrap; }
+      .photo-placeholder { max-width: 200px; }
+      .facts-card { flex: 1; min-width: 200px; }
+    }
+
+    @media (max-width: 480px) {
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .content-wrap { padding: 0 1.25rem 4rem; }
+      .nav-inner { padding: 0 1rem; }
+      .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Jeremy Tammik</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about.html" aria-current="page">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <p class="page-label">Biography</p>
+      <h1 class="page-title">About</h1>
+    </div>
+
+    <div class="content-wrap">
+      <div class="about-grid">
+
+        <!-- Bio narrative -->
+        <div class="bio-section">
+          <p class="section-label">Full biography</p>
+          <div class="bio-text">
+            <p>
+              Jeremy Tammik holds an <strong>M.Sc. in Mathematics</strong> from <strong>Philipps-Universität Marburg</strong>, Germany — a foundation that shaped his rigorous, analytical approach to software development and technical communication.
+            </p>
+            <p>
+              He joined <strong>Autodesk in 1988</strong> as a European technology evangelist for AutoCAD, becoming one of the company's earliest and most enduring voices in developer relations. During his first tenure, he co-founded <strong>ADGE</strong> (Autodesk Developer Group Europe), helping to build a continent-wide community of developers around Autodesk's platform.
+            </p>
+            <p>
+              In <strong>1993</strong>, he published <em>Das AutoCAD Development System ADS</em> (Rossipaul Verlag, Munich) — an early technical reference for AutoCAD developers that remains a testament to his commitment to knowledge-sharing.
+            </p>
+            <p>
+              He left Autodesk in <strong>1994</strong> to work on HVAC development software, broadening his expertise in applied engineering software outside the Autodesk ecosystem. He returned in <strong>2005</strong>, joining the AEC workgroup within ADN DevTech (the Autodesk Developer Network), where he has remained since — helping thousands of developers navigate the Revit API and Autodesk Platform Services.
+            </p>
+            <p>
+              Since <strong>2008</strong>, Jeremy has authored over <strong>2,080 posts</strong> on <a href="https://thebuildingcoder.typepad.com" target="_blank" rel="noopener">The Building Coder</a>, the definitive resource for Revit API developers worldwide. He also ran <a href="https://the3dwebcoder.com" target="_blank" rel="noopener">The 3D Web Coder</a> from 2015–2016, documenting the emerging world of AEC web development.
+            </p>
+            <p>
+              Today, Jeremy is based in <strong>Bern, Switzerland</strong>, and serves as an advisor at <a href="https://bimrock.ai/advisors/jeremy-tammik" target="_blank" rel="noopener">Bimrock AI</a> — bringing his deep domain expertise to the next wave of AI-powered construction technology.
+            </p>
+            <p>
+              He is fluent in <strong>six European languages</strong>, a passionate amateur DJ volunteering at <em>Body and Soul Barfussdisco Basel</em> since 2010, and an avid cook, climber, hiker, and nature enthusiast.
+            </p>
+          </div>
+
+          <!-- Timeline -->
+          <div class="timeline-section">
+            <p class="section-label">Career timeline</p>
+            <div class="timeline">
+              <div class="timeline-item highlight">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1988</div>
+                <div class="timeline-event">Joined Autodesk</div>
+                <div class="timeline-detail">European technology evangelist for AutoCAD</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1991</div>
+                <div class="timeline-event">Co-founded ADGE</div>
+                <div class="timeline-detail">Autodesk Developer Group Europe</div>
+              </div>
+              <div class="timeline-item highlight">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1993</div>
+                <div class="timeline-event">First book published</div>
+                <div class="timeline-detail">Das AutoCAD Development System ADS — Rossipaul Verlag, Munich</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1994</div>
+                <div class="timeline-event">Left Autodesk</div>
+                <div class="timeline-detail">HVAC software development</div>
+              </div>
+              <div class="timeline-item highlight">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2005</div>
+                <div class="timeline-event">Returned to Autodesk</div>
+                <div class="timeline-detail">AEC workgroup, ADN DevTech</div>
+              </div>
+              <div class="timeline-item highlight">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2008</div>
+                <div class="timeline-event">Launched The Building Coder</div>
+                <div class="timeline-detail">Now 2,080+ posts on Revit API development</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2010</div>
+                <div class="timeline-event">DJ volunteer</div>
+                <div class="timeline-detail">Body and Soul Barfussdisco Basel</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2015</div>
+                <div class="timeline-event">Launched The 3D Web Coder</div>
+                <div class="timeline-detail">AEC web development (2015–2016, 77 posts)</div>
+              </div>
+              <div class="timeline-item highlight">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2024</div>
+                <div class="timeline-event">Advisor at Bimrock AI</div>
+                <div class="timeline-detail">AI-powered construction technology</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interests -->
+          <div class="interests-section">
+            <p class="section-label">Interests &amp; pursuits</p>
+            <div class="tag-cloud">
+              <span class="tag">Cooking</span>
+              <span class="tag">Rock climbing</span>
+              <span class="tag">Hiking</span>
+              <span class="tag">Sports</span>
+              <span class="tag">Nature</span>
+              <span class="tag">Literature</span>
+              <span class="tag">Music</span>
+              <span class="tag">Dancing</span>
+              <span class="tag">DJ (volunteer)</span>
+              <span class="tag">Mathematics</span>
+              <span class="tag">Languages</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="about-sidebar">
+          <div class="photo-placeholder">
+            <div class="photo-initials">JT</div>
+            <div class="photo-caption">Jeremy Tammik</div>
+          </div>
+
+          <div class="facts-card">
+            <p class="facts-label">At a glance</p>
+            <ul class="facts-list">
+              <li>M.Sc. Mathematics, Philipps-Universität Marburg</li>
+              <li>At Autodesk since 1988</li>
+              <li>Based in Bern, Switzerland</li>
+              <li>Fluent in six European languages</li>
+              <li>2,080+ blog posts published</li>
+              <li>Author since 1993</li>
+              <li>Autodesk University speaker</li>
+              <li>Advisor at Bimrock AI</li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2024 Jeremy Tammik · Bern, Switzerland</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://bimrock.ai" target="_blank" rel="nofollow noreferrer">Bimrock AI</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

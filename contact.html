@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Jeremy Tammik</title>
+  <meta name="description" content="Get in touch with Jeremy Tammik. For Revit API questions, use the Autodesk Community forums or StackOverflow. Connect on GitHub, LinkedIn, and Twitter.">
+  <link rel="canonical" href="https://jeremytammik.com/contact">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Jeremy Tammik">
+  <meta property="og:description" content="Email, Autodesk forums, StackOverflow, GitHub, LinkedIn, Twitter, and YouTube — all the ways to reach Jeremy Tammik.">
+  <meta property="og:url" content="https://jeremytammik.com/contact">
+  <meta property="og:site_name" content="Jeremy Tammik">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Jeremy Tammik">
+  <meta name="twitter:description" content="Email, Autodesk forums, GitHub, LinkedIn, and more.">
+  <meta name="twitter:site" content="@jeremytammik">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-1: #0f0f0f;
+      --bg-2: #141414;
+      --text: #dad6ce;
+      --text-muted: #5c5855;
+      --text-dim: #8c8680;
+      --accent: #c9a96e;
+      --accent-dim: rgba(201,169,110,0.12);
+      --border: #1a1a1a;
+      --border-mid: #242424;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+      --max-w: 1080px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 3px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    .nav-links a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 2rem 3.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .page-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .page-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    /* ── EMAIL BLOCK ── */
+    .contact-block {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .contact-block:hover { border-color: var(--border-mid); }
+
+    .contact-block.featured {
+      border-color: var(--border-mid);
+      grid-column: 1 / -1;
+    }
+
+    .contact-block.featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      border-radius: 5px 5px 0 0;
+    }
+
+    .block-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .email-address {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+    }
+
+    .email-address a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .email-address a:hover { color: #fff; }
+
+    .email-note {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    /* Forums note */
+    .forum-note {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+    }
+
+    .forum-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .forum-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .forum-link:hover { color: #fff; }
+
+    .forum-link::before {
+      content: '→';
+      color: var(--text-muted);
+    }
+
+    /* ── SOCIAL GRID ── */
+    .social-section {
+      margin-top: 2rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .social-card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: var(--text-dim);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .social-card:hover {
+      border-color: var(--border-mid);
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    .social-platform {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .social-handle {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .social-arrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-top: auto;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-block.featured { grid-column: auto; }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .content-wrap { padding: 0 1.25rem 4rem; }
+      .nav-inner { padding: 0 1rem; }
+      .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.72rem; }
+      .social-grid { grid-template-columns: 1fr 1fr; }
+      .email-address { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Jeremy Tammik</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <p class="page-label">Get in touch</p>
+      <h1 class="page-title">Contact</h1>
+    </div>
+
+    <div class="content-wrap">
+      <div class="contact-grid">
+
+        <!-- Email -->
+        <div class="contact-block featured">
+          <p class="block-label">Email</p>
+          <p class="email-address">
+            <a href="mailto:jeremy.tammik@autodesk.com">jeremy.tammik@autodesk.com</a>
+          </p>
+          <p class="email-note">
+            Direct email for general inquiries, speaking requests, and professional matters.
+          </p>
+        </div>
+
+        <!-- Forums note -->
+        <div class="contact-block">
+          <p class="block-label">Technical questions · Revit API</p>
+          <p class="forum-note">
+            For questions about the Revit API, Autodesk Platform Services, or add-in development, please use the public forums where the entire community benefits from the discussion.
+          </p>
+          <div class="forum-links">
+            <a class="forum-link" href="https://forums.autodesk.com/t5/revit-api-forum/bd-p/160" target="_blank" rel="noopener">
+              Autodesk Community — Revit API Forum
+            </a>
+            <a class="forum-link" href="https://stackoverflow.com/questions/tagged/revit-api" target="_blank" rel="noopener">
+              StackOverflow — tag: revit-api
+            </a>
+            <a class="forum-link" href="https://stackoverflow.com/questions/tagged/autodesk-forge" target="_blank" rel="noopener">
+              StackOverflow — tag: autodesk-forge
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog -->
+        <div class="contact-block">
+          <p class="block-label">Follow the work</p>
+          <p class="forum-note">
+            2,080+ posts on Revit API development at The Building Coder — the most comprehensive resource for Autodesk platform developers.
+          </p>
+          <div class="forum-links">
+            <a class="forum-link" href="https://thebuildingcoder.typepad.com" target="_blank" rel="noopener">
+              The Building Coder
+            </a>
+            <a class="forum-link" href="https://the3dwebcoder.com" target="_blank" rel="noopener">
+              The 3D Web Coder
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social links -->
+      <div class="social-section">
+        <p class="section-label">Social &amp; professional profiles</p>
+        <div class="social-grid">
+          <a class="social-card" href="https://github.com/jeremytammik" target="_blank" rel="noopener">
+            <span class="social-platform">GitHub</span>
+            <span class="social-handle">jeremytammik</span>
+            <span class="social-arrow">→</span>
+          </a>
+          <a class="social-card" href="https://linkedin.com/in/jeremytammik" target="_blank" rel="noopener">
+            <span class="social-platform">LinkedIn</span>
+            <span class="social-handle">jeremytammik</span>
+            <span class="social-arrow">→</span>
+          </a>
+          <a class="social-card" href="https://twitter.com/jeremytammik" target="_blank" rel="noopener">
+            <span class="social-platform">Twitter / X</span>
+            <span class="social-handle">@jeremytammik</span>
+            <span class="social-arrow">→</span>
+          </a>
+          <a class="social-card" href="https://www.youtube.com/@jeremytammik" target="_blank" rel="noopener">
+            <span class="social-platform">YouTube</span>
+            <span class="social-handle">jeremytammik</span>
+            <span class="social-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2024 Jeremy Tammik · Bern, Switzerland</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="https://bimrock.ai" target="_blank" rel="nofollow noreferrer">Bimrock AI</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

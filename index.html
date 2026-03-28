@@ -1,112 +1,504 @@
 <!DOCTYPE html>
-<!-- auto-deploy test -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeremy Tammik</title>
+  <title>Jeremy Tammik — Autodesk Developer Advocate &amp; Author</title>
+  <meta name="description" content="Jeremy Tammik is an Autodesk Developer Advocate, author of The Building Coder (2,080+ posts), and a leading voice in Revit API and AEC technology development.">
+  <link rel="canonical" href="https://jeremytammik.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jeremy Tammik — Autodesk Developer Advocate &amp; Author">
+  <meta property="og:description" content="Jeremy Tammik is an Autodesk Developer Advocate, author of The Building Coder (2,080+ posts), and a leading voice in Revit API and AEC technology development.">
+  <meta property="og:url" content="https://jeremytammik.com">
+  <meta property="og:site_name" content="Jeremy Tammik">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jeremy Tammik — Autodesk Developer Advocate">
+  <meta name="twitter:description" content="Author of The Building Coder (2,080+ posts). Autodesk Developer Advocate since 1988. Revit API, BIM, AEC.">
+  <meta name="twitter:site" content="@jeremytammik">
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jeremy Tammik",
+    "alternateName": ["The Building Coder"],
+    "jobTitle": "Developer Advocate",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Autodesk"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Philipps-Universität Marburg"
+    },
+    "url": "https://jeremytammik.com",
+    "sameAs": [
+      "https://github.com/jeremytammik",
+      "https://linkedin.com/in/jeremytammik",
+      "https://twitter.com/jeremytammik",
+      "https://aps.autodesk.com/author/jeremy-tammik",
+      "https://thebuildingcoder.typepad.com",
+      "https://the3dwebcoder.com"
+    ],
+    "knowsAbout": ["Revit API", "AutoCAD", "BIM", "AEC", "Autodesk Forge", "Autodesk Platform Services"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #0a0a0a;
+      --bg-1: #0f0f0f;
+      --bg-2: #141414;
+      --text: #dad6ce;
+      --text-muted: #5c5855;
+      --text-dim: #8c8680;
+      --accent: #c9a96e;
+      --accent-dim: rgba(201,169,110,0.12);
+      --border: #1a1a1a;
+      --border-mid: #242424;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+      --max-w: 1080px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
     body {
-      background: #0a0a0a;
-      color: #e8e8e8;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-weight: 400;
+      line-height: 1.6;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
-    .container {
-      max-width: 640px;
-      width: 100%;
-      text-align: center;
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
     }
 
-    h1 {
-      font-size: 2.75rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: #888;
-      letter-spacing: 0.01em;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #2a2a2a;
-      margin: 2rem auto;
-    }
-
-    .bio {
-      font-size: 0.95rem;
-      color: #aaa;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
-    }
-
-    .links {
+    .nav-links {
       display: flex;
-      flex-direction: column;
+      gap: 0.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 3px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    .nav-links a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
       gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .role-item {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .role-sep {
+      color: var(--border-mid);
+      user-select: none;
+    }
+
+    .hero-location {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 3rem;
+      display: flex;
       align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-location::before {
+      content: '◎';
+      color: var(--accent);
+      font-size: 0.65rem;
+    }
+
+    .hero-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
       margin-bottom: 3rem;
     }
 
-    .links a {
-      color: #c8c8c8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-      padding: 0.5rem 1.25rem;
-      border: 1px solid #222;
-      border-radius: 4px;
-      transition: border-color 0.2s, color 0.2s;
-      min-width: 240px;
+    /* ── HERO GRID ── */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: start;
+      animation: fadeUp 0.7s 0.15s ease both;
     }
 
-    .links a:hover {
-      border-color: #555;
-      color: #fff;
+    .hero-bio {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-dim);
+      max-width: 54ch;
     }
 
-    footer {
-      font-size: 0.78rem;
-      color: #444;
-      letter-spacing: 0.04em;
+    .hero-bio strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* ── QUICK LINKS ── */
+    .quick-links-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1rem;
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .quick-link:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: var(--accent-dim);
+    }
+
+    .quick-link-icon {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      max-width: var(--max-w);
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .stat-item {
+      padding: 1.5rem 1.75rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid var(--border); }
+      .stat-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .stats-bar { margin-bottom: 3rem; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner { padding: 0 1rem; }
+      .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.72rem; }
+      .hero-name { font-size: 3rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Jeremy Tammik</h1>
-    <p class="subtitle">Autodesk Developer Advocate &middot; Author of The Building Coder &middot; Advisor at Bimrock AI</p>
 
-    <div class="divider"></div>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Jeremy Tammik</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <p class="bio">
-      Jeremy Tammik has been at Autodesk since 1988, supporting developers building on Revit, Forge, and the Autodesk Platform. Author of 2,080+ blog posts on The Building Coder and The 3D Web Coder.
-    </p>
+  <main>
+    <section class="hero">
+      <p class="hero-eyebrow">Bern, Switzerland</p>
+      <h1 class="hero-name">Jeremy<br>Tammik</h1>
+      <div class="hero-roles">
+        <span class="role-item">Autodesk Developer Advocate</span>
+        <span class="role-sep">·</span>
+        <span class="role-item">Author of The Building Coder</span>
+        <span class="role-sep">·</span>
+        <span class="role-item">Advisor at Bimrock AI</span>
+      </div>
+      <p class="hero-location">At Autodesk since 1988</p>
+      <div class="hero-divider"></div>
+      <div class="hero-grid">
+        <p class="hero-bio">
+          Jeremy Tammik has been at the forefront of AEC technology since joining Autodesk in <strong>1988</strong>. Author of <strong>2,080+ blog posts</strong> on The Building Coder and The 3D Web Coder, he's dedicated his career to empowering developers building on the Autodesk platform.
+        </p>
+        <div>
+          <p class="quick-links-label">External links</p>
+          <div class="quick-links">
+            <a class="quick-link" href="https://thebuildingcoder.typepad.com" target="_blank" rel="noopener">
+              <span class="quick-link-icon">→</span>
+              The Building Coder
+            </a>
+            <a class="quick-link" href="https://the3dwebcoder.com" target="_blank" rel="noopener">
+              <span class="quick-link-icon">→</span>
+              The 3D Web Coder
+            </a>
+            <a class="quick-link" href="https://bimrock.ai" target="_blank" rel="noopener noreferrer">
+              <span class="quick-link-icon">→</span>
+              Bimrock AI
+            </a>
+            <a class="quick-link" href="https://aps.autodesk.com/author/jeremy-tammik" target="_blank" rel="noopener">
+              <span class="quick-link-icon">→</span>
+              Autodesk Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <nav class="links">
-      <a href="https://thebuildingcoder.typepad.com" target="_blank" rel="noopener">The Building Coder</a>
-      <a href="https://the3dwebcoder.com" target="_blank" rel="noopener">The 3D Web Coder</a>
-      <a href="https://bimrock.ai" target="_blank" rel="noopener">Bimrock AI</a>
-    </nav>
+    <section class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-number">2,080+</div>
+          <div class="stat-label">Blog posts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">38</div>
+          <div class="stat-label">Years at Autodesk</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">European languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1993</div>
+          <div class="stat-label">First published book</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer>Coming soon &mdash; full site under construction</footer>
-  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2024 Jeremy Tammik · Bern, Switzerland</p>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://bimrock.ai" target="_blank" rel="nofollow noreferrer">Bimrock AI</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
